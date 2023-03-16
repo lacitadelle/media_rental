@@ -16,7 +16,8 @@ public class EBook extends Media {
     // constructor for reading from the file
     public EBook(Document ebookData) {
         super(ebookData);
-        chapters = Integer.parseInt(XMLUtil.parse("<chapters>", "</chapters>", line));
+        // retrieve the number of chapters
+        chapters = Integer.parseInt(ebookData.getElementsByTagName("chapters").item(0).getTextContent());
     }
 
     // getter and setter for local variables

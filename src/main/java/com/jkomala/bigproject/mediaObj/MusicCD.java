@@ -1,12 +1,20 @@
 package com.jkomala.bigproject.mediaObj;
 
+import org.w3c.dom.Document;
+
 import java.time.LocalDate;
 
 public class MusicCD extends Media {
     int playtime; // in minutes
+
     public MusicCD(int id, int yearPublished, String title, int playtime) {
         super(id, yearPublished, title);
         this.playtime = playtime;
+    }
+
+    public MusicCD(Document musicCdData) {
+        super(musicCdData);
+        playtime = Integer.parseInt(musicCdData.getElementsByTagName("playtime").item(0).getTextContent());
     }
 
     // getter and setter for local variable
