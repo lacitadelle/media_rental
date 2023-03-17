@@ -5,6 +5,7 @@ import com.jkomala.bigproject.mediaObj.Media;
 import com.jkomala.bigproject.mediaObj.MovieDVD;
 import com.jkomala.bigproject.mediaObj.MusicCD;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -15,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.FileSystemException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -30,46 +32,64 @@ public class Manager {
     ArrayList<Media> mediaLibrary = new ArrayList<>();
 
     public Manager(String directory) throws IOException, ParserConfigurationException, SAXException {
+        // handle file I/O: load all files in directory into fileList[].
         File directoryPath = new File(directory);
+        File[] fileList = directoryPath.listFiles(); // return null specified directory doesn't exist.
 
-        File fileList[] = directoryPath.listFiles(); // return null specified directory doesn't exist.
         if (fileList == null) {
             throw new FileNotFoundException("Could not load directory"); // throw an error if unable to find directory.
         }
-
-        Media media;
-        String line;
-        Scanner scanner;
 
         // prepare XML parser.
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 
         for (File mediaFile: fileList) { // iterate over each File in fileList
-            String fileName = mediaFile.getName();
+            Document parsedMediaObject = documentBuilder.parse(mediaFile);
+            // rootElement specifies the type of our media object.
+            Element rootElement = parsedMediaObject.getDocumentElement();
+            String mediaObjectType = rootElement.getTagName();
 
-            if (fileName.contains("EBook")) {
-                Document ebookData = documentBuilder.parse(mediaFile); // throw SAXException
-                mediaLibrary.add(new EBook(ebookData));
-            } else if (fileName.contains("MovieDVD")) {
-                Document dvdData = documentBuilder.parse(mediaFile); // throw SAXException
-                mediaLibrary.add(new MovieDVD(dvdData));
-            } else if (fileName.contains("Music")) {
-                Document musicCdData = documentBuilder.parse(mediaFile);
-                mediaLibrary.add(new MusicCD(musicCdData));
+            // create an instance of appropriate media type
+            switch (mediaObjectType) {
+                case "EBook" -> mediaLibrary.add(new EBook(parsedMediaObject));
+                case "MovieDVD" -> mediaLibrary.add(new MovieDVD(parsedMediaObject));
+                case "MusicCD" -> mediaLibrary.add(new MusicCD(parsedMediaObject));
+                default -> throw new FileSystemException("Directory contains unrecognized object or invalid XML file.");
             }
-            else {
-                System.out.printf("%s is unrecognized by this program.\n", fileName);
-            }
-
+            // sort mediaLibrary by id
+            mediaLibrary.sort((o1, o2) -> o1.getId() - o2.getId());
         }
+
+
+
+    }
+
+    /**
+     * Use this method while manually adding media objects to mediaLibrary to ensure a unique id.
+     * @return the id of the last media object in mediaLibrary
+     */
+    public int getLastId() {
+        return mediaLibrary.get(mediaLibrary.size() - 1).getId();
+    }
+
+    // a void method that adds a new media object to the mediaLibrary
+    public void addMedia(Media media) {
+        // if the id of the media object is already in use, throw an error.
+        for (Media mediaObject: mediaLibrary) {
+            if (mediaObject.getId() == media.getId()) {
+                throw new IllegalArgumentException("Id already in use. Use Manager.");
+            }
+        }
+        mediaLibrary.add(media);
     }
 
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
         Manager manager = new Manager("C:/media_objects");
-        System.out.println(manager.mediaLibrary.get(0));
-        System.out.println(manager.mediaLibrary.get(11));
-        System.out.println(manager.mediaLibrary.get(22));
+        // print every media object in mediaLibrary
+        for (Media media: manager.mediaLibrary) {
+            System.out.println(media);
+        }
     }
 
 

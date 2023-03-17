@@ -1,5 +1,6 @@
 package com.jkomala.bigproject.mediaObj;
 
+import com.jkomala.bigproject.mediaManager.Manager;
 import org.w3c.dom.Document;
 
 abstract public class Media {
@@ -20,6 +21,8 @@ abstract public class Media {
         yearPublished = Integer.parseInt(mediaFile.getElementsByTagName("yearPublished").item(0).getTextContent());
         title = mediaFile.getElementsByTagName("title").item(0).getTextContent();
     }
+
+
     //getters and setters
     public int getId() {
         return id;
