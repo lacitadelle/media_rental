@@ -7,8 +7,8 @@ import java.time.LocalDate;
 public class MusicCD extends Media {
     int playtime; // in minutes
 
-    public MusicCD(int id, int yearPublished, String title, int playtime) {
-        super(id, yearPublished, title);
+    public MusicCD(int id, int yearPublished, String title, int playtime, boolean availability) {
+        super(id, yearPublished, title, availability);
         this.playtime = playtime;
     }
 
@@ -38,13 +38,19 @@ public class MusicCD extends Media {
     }
 
     @Override
-    public String toString() {
-        return String.format("<MusicCD>\n" +
-                "\t<id>%s</id>\n" +
-                "\t<title>%s</title>\n" +
-                "\t<yearPublished>%s</yearPublished>\n" +
+    public String toXMLString() {
+        return String.format(
+                "<?xml version=\"1.0\" ?>\n" +
+                "<MusicCD>\n" +
+                super.toXMLString() +
                 "\t<playtime>%s</playtime>\n" +
-                "</MusicCD>", this.getId(), this.getTitle(), this.getYearPublished(), this.getPlaytime());
+                "</MusicCD>", playtime);
     }
 
+    @Override
+    public String toString() {
+        return ("Type: Music CD, " +
+                super.toString() +
+                "Playtime: " + playtime + " minutes");
+    }
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<MusicCD>
+  <id>11</id>
+  <yearPublished>2022</yearPublished>
+  <title>Justice</title>
+  <playtime>51</playtime>
+  <availability>True</availability>
+</MusicCD>

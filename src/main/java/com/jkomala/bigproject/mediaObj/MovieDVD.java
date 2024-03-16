@@ -3,10 +3,10 @@ package com.jkomala.bigproject.mediaObj;
 import org.w3c.dom.Document;
 
 public class MovieDVD extends Media {
-    double mediaDataSize; // in megabytes
+    private double mediaDataSize; // in megabytes
 
-    public MovieDVD(int id, int yearPublished, String title, double mediaDataSize) {
-        super(id, yearPublished, title);
+    public MovieDVD(int id, int yearPublished, String title, double mediaDataSize, boolean availability) {
+        super(id, yearPublished, title, availability);
         this.mediaDataSize = mediaDataSize;
     }
 
@@ -24,20 +24,23 @@ public class MovieDVD extends Media {
         this.mediaDataSize = mediaDataSize;
     }
 
-    // instance methods
+
     @Override
-    public double calculateRentalFee() {
-        return super.calculateRentalFee();
+    public String toXMLString() {
+        return String.format(
+                "<?xml version=\"1.0\" ?>\n" +
+                "<MovieDVD>\n" +
+                super.toXMLString() +
+                "\t<mediaDataSize>%s</mediaDataSize>\n" +
+                "</MovieDVD>", mediaDataSize);
     }
 
     @Override
     public String toString() {
-        return String.format("<MovieDVD>\n" +
-                "\t<id>%s</id>\n" +
-                "\t<title>%s</title>\n" +
-                "\t<yearPublished>%s</yearPublished>\n" +
-                "\t<mediaDataSize>%s</mediaDataSize>\n" +
-                "</MovieDVD>", this.getId(), this.getTitle(), this.getYearPublished(), this.getMediaDataSize());
+        return  (
+                "Type: Movie DVD, " +
+                super.toString() +
+                "Media Size: " + mediaDataSize + "MB"
+        );
     }
-
 }

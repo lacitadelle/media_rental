@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<MusicCD>
+  <id>12</id>
+  <yearPublished>2021</yearPublished>
+  <title>Happier Than Ever</title>
+  <playtime>56</playtime>
+  <availability>True</availability>
+</MusicCD>

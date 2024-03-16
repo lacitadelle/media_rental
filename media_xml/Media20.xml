@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<MusicCD>
+  <id>20</id>
+  <yearPublished>2022</yearPublished>
+  <title>Red (Taylor's Version)</title>
+  <playtime>76</playtime>
+  <availability>True</availability>
+</MusicCD>

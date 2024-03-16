@@ -8,8 +8,8 @@ public class EBook extends Media {
     private int chapters;
 
     // constructor
-    public EBook(int id, int yearPublished, String title, int chapters) {
-        super(id, yearPublished, title);
+    public EBook(int id, int yearPublished, String title, int chapters, boolean availability) {
+        super(id, yearPublished, title, availability);
         this.chapters = chapters;
     }
 
@@ -40,13 +40,19 @@ public class EBook extends Media {
     }
 
     @Override
-    public String toString() {
-        return String.format("<EBook>\n" +
-                "\t<id>%s</id>\n" +
-                "\t<title>%s</title>\n" +
-                "\t<yearPublished>%s</yearPublished>\n" +
+    public String toXMLString() {
+        return String.format(
+                "<?xml version=\"1.0\" ?>\n" +
+                "<EBook>\n" +
+                super.toXMLString() + // super.toString() gives you id, title, availability and yearPublished
                 "\t<chapters>%s</chapters>\n" +
-                "</EBook>", this.getId(), this.getTitle(), this.getYearPublished(), this.getChapters());
+                "</EBook>", chapters);
     }
 
+    @Override
+    public String toString() {
+        return ("Type: EBook, " +
+                super.toString() +
+                "Chapters: " + chapters);
+    }
 }

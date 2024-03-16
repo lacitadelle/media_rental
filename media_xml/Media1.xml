@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<EBook>
+	<id>1</id>
+	<title>Clean Code: A Handbook of Agile Software Craftsmanship</title>
+	<availability>false</availability>
+	<yearPublished>2007</yearPublished>
+	<chapters>11</chapters>
+</EBook>

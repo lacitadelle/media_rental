@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<EBook>
+  <id>3</id>
+  <yearPublished>1995</yearPublished>
+  <title>The C++ Programming Language</title>
+  <chapters>29</chapters>
+  <availability>True</availability>
+</EBook>

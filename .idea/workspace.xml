@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95f0eb21-74b3-4cd9-bb66-f34d1a64dd0c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/cmdInterface/MediaRentalSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/cmdInterface/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaManager/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaManager/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaObj/EBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaObj/EBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaObj/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaObj/Media.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaObj/XMLUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaObj/MovieDVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaObj/MovieDVD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaObj/MusicCD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaObj/MusicCD.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +36,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2N49mEd2K6ysGt3FjkoxJpK4597" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -41,21 +49,42 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.MediaRentalSystem.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MediaRentalSystem">
     <configuration name="Manager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jkomala.bigproject.mediaManager.Manager" />
       <module name="final_project" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.jkomala.bigproject.mediaManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MediaRentalSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jkomala.bigproject.cmdInterface.MediaRentalSystem" />
+      <module name="final_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jkomala.bigproject.cmdInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -75,16 +104,10 @@
       </method>
     </configuration>
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
-      <setting name="displayName" value="" />
-      <setting name="replType" value="NREPL" />
-      <setting name="execution" value="LEININGEN" />
-      <setting name="jvmArgs" value="" />
-      <setting name="parameters" value="" />
-      <setting name="workingDir" value="" />
-      <setting name="profiles" value="" />
-      <setting name="aliases" value="" />
-      <setting name="fixLineNumbers" value="false" />
-      <setting name="focusEditor" value="false" />
+      <option name="configVersion" value="1" />
+      <option name="execution" value="LEININGEN" />
+      <option name="options" />
+      <option name="profiles" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
@@ -99,11 +122,58 @@
       <setting name="focusEditor" value="false" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="aws.lambda" factoryName="Local">
+      <option name="credentialProviderId" />
+      <option name="regionId" />
+      <option name="debugHost" value="localhost" />
+      <option name="architecture" />
+      <option name="environmentVariables">
+        <map />
+      </option>
+      <option name="handler" />
+      <option name="image" value="false" />
+      <option name="logicalFunctionName" />
+      <option name="memorySize" value="128" />
+      <option name="pathMappings">
+        <list />
+      </option>
+      <option name="platform" />
+      <option name="runtime" />
+      <option name="templateFile" />
+      <option name="timeout" value="300" />
+      <option name="useTemplate" value="false" />
+      <option name="input" />
+      <option name="inputIsFile" value="false" />
+      <sam>
+        <option name="additionalBuildArgs" />
+        <option name="additionalLocalArgs" />
+        <option name="buildInContainer" value="false" />
+        <option name="dockerNetwork" />
+        <option name="skipImagePull" value="false" />
+      </sam>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="aws.lambda" factoryName="Remote">
+      <option name="credentialProviderId" />
+      <option name="regionId" />
+      <option name="functionName" />
+      <option name="input" />
+      <option name="inputIsFile" value="false" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MediaRentalSystem" />
         <item itemvalue="Application.Manager" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-f644763e9732-1e16d6ec" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -115,6 +185,26 @@
       <updated>1678912645336</updated>
       <workItem from="1678912646797" duration="14738000" />
       <workItem from="1679059035506" duration="2035000" />
+      <workItem from="1679255155237" duration="10422000" />
+      <workItem from="1679940843273" duration="1187000" />
+      <workItem from="1681121924114" duration="1261000" />
+      <workItem from="1681302923314" duration="2786000" />
+      <workItem from="1681636710887" duration="593000" />
+      <workItem from="1687764004207" duration="479000" />
+      <workItem from="1689931443363" duration="128000" />
+      <workItem from="1693290866393" duration="33000" />
+      <workItem from="1695112310047" duration="138000" />
+      <workItem from="1700832633884" duration="3498000" />
+      <workItem from="1702045214824" duration="199000" />
+      <workItem from="1703960884172" duration="76000" />
+      <workItem from="1703967914295" duration="138000" />
+      <workItem from="1704046918291" duration="229000" />
+      <workItem from="1704047165107" duration="144000" />
+      <workItem from="1710184590934" duration="1599000" />
+      <workItem from="1710620958312" duration="114000" />
+      <workItem from="1710621120541" duration="146000" />
+      <workItem from="1710621358677" duration="141000" />
+      <workItem from="1710621531875" duration="375000" />
     </task>
     <servers />
   </component>
@@ -131,5 +221,34 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/mediaManager/Manager.java</url>
+          <line>117</line>
+          <properties class="com.jkomala.bigproject.mediaManager.Manager">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/jkomala/bigproject/cmdInterface/MediaRentalSystem.java</url>
+          <line>15</line>
+          <properties class="com.jkomala.bigproject.cmdInterface.MediaRentalSystem" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/final_project$MediaRentalSystem.ic" NAME="MediaRentalSystem Coverage Results" MODIFIED="1679259390832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jkomala.bigproject.cmdInterface.*</FILTER>
+    </SUITE>
   </component>
 </project>
